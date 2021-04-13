@@ -4,11 +4,18 @@
 
 require __DIR__.'/app/Database/database.php';
 require __DIR__.'/app/Entity/vaga.php';
+require __DIR__.'/app/Session/login.php';
 
 
 define('TITLE', 'Cadastrar Vaga');
 
 use App\Entity\Vaga;
+use App\Session\Login;
+
+Login::requireLogin();
+
+
+
 $obVaga = new \App\Entity\Vaga();
 
 // validação $_POST

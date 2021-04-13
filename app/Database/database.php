@@ -77,6 +77,7 @@ class Database
      */
     public function insert($values)
     {
+        // var_dump($values);die;
         // dados da query
 
         $fields = array_keys($values);

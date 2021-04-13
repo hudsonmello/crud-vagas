@@ -2,12 +2,15 @@
 
 // require __DIR__.'/vendor/autoload.php';
 
-define('TITLE', 'Editar Vaga');
 
 require __DIR__.'/app/Database/database.php';
 require __DIR__.'/app/Entity/vaga.php';
+require __DIR__.'/app/Session/login.php';
 
 use App\Entity\Vaga;
+use App\Session\Login;
+
+Login::requireLogin();
 
 // validação do id
 if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
